@@ -30,11 +30,12 @@ function AddressBook() {
   };
   
   // Business Logic for Contacts ---------
-  function Contact(firstName, lastName, phoneNumber, emailAddress) {
+  function Contact(firstName, lastName, phoneNumber, emailAddress, homeAddress) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
     this.emailAddress = emailAddress;
+    this.homeAddress = homeAddress;
   }
   
   Contact.prototype.fullName = function() {
@@ -64,6 +65,7 @@ function AddressBook() {
     document.querySelector(".last-name").innerText = contact.lastName;
     document.querySelector(".phone-number").innerText = contact.phoneNumber;
     document.querySelector(".email-address").innerText = contact.emailAddress;
+    document.querySelector(".home-address").innerText = contact.homeAddress;
     document.querySelector("button.delete").setAttribute("id", contact.id);
     document.querySelector("div#contact-details").removeAttribute("class");
   }
@@ -81,13 +83,15 @@ function AddressBook() {
     const inputtedLastName = document.querySelector("input#new-last-name").value;
     const inputtedPhoneNumber = document.querySelector("input#new-phone-number").value;
     const inputtedEmailAddress = document.querySelector("input#new-email-address").value;
-    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress);
+    const inputtedHomeAddress = document.querySelector("input#new-home-address").value;
+    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber, inputtedEmailAddress, inputtedHomeAddress);
     addressBook.addContact(newContact);
     listContacts(addressBook);
     document.querySelector("input#new-first-name").value = null;
     document.querySelector("input#new-last-name").value = null;
     document.querySelector("input#new-phone-number").value = null;
     document.querySelector("input#new-email-address").value = null;
+    document.querySelector("input#new-home-address").value = null;
   }
   
   window.addEventListener("load", function (){
