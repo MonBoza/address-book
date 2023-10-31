@@ -36,9 +36,18 @@ function AddressBook() {
     this.phoneNumber = phoneNumber;
     this.emailAddress = emailAddress;
     this.homeAddress = homeAddress;
+    
+    this.addresses = []
+    if (homeAddress) {
+     this.addresses.push({type: "home", value: homeAddress});
+    }
+    if (emailAddress) {
+      this.addresses.push({type: "email", value: emailAddress});
+       }
+    
   }
-  
-  
+
+    
   Contact.prototype.fullName = function() {
     return this.firstName + " " + this.lastName;
   };
