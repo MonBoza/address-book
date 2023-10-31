@@ -46,3 +46,8 @@ let contactId = addressBook.assignId();
 Expected Output: contacts: {
     1: {firstName: "Ada", lastName: "Lovelace", phoneNumber: "000-000-0000", emailAddress: 123@email.com, id: 1}
 }
+
+Test: It will create an object in Contacts() for addresses.
+Code: Contact(homeAddress)
+this.homeAddress = homeAddress 
+Expected Output: 1: {firstName: "Ada", lastName: "Lovelace", phoneNumber: "000-000-0000", emailAddress: 123@email.com, id: 1, homeAddress: 1234 Address city,State 11111}
