@@ -38,6 +38,7 @@ function AddressBook() {
     this.homeAddress = homeAddress;
   }
   
+  
   Contact.prototype.fullName = function() {
     return this.firstName + " " + this.lastName;
   };
