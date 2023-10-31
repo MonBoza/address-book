@@ -38,3 +38,11 @@ if (this.contacts[id] !== undefined){
 return false;
 Expected Output:contact.id;
                >1 
+
+Test: It will create a method that assigns ID's to contacts
+Code: let addressBook = new AddressBook();
+addressBook.addContact(new Contact("Ada", "Lovelace", "503-555-0100", "123@email.com));
+let contactId = addressBook.assignId();
+Expected Output: contacts: {
+    1: {firstName: "Ada", lastName: "Lovelace", phoneNumber: "000-000-0000", emailAddress: 123@email.com, id: 1}
+}
